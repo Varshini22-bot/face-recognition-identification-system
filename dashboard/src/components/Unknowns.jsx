@@ -28,7 +28,7 @@ export default function Unknowns() {
     <>
       <div className="page-title">Unknowns</div>
       <div className="page-subtitle">
-        Khuôn mặt không xác định được danh tính (similarity &lt; threshold)
+        Unidentified faces detected below the recognition threshold
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 16 }}>

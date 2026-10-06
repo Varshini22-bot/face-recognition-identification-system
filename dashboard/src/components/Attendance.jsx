@@ -28,7 +28,7 @@ export default function Attendance() {
   return (
     <>
       <div className="page-title">Attendance</div>
-      <div className="page-subtitle">Lịch sử điểm danh khuôn mặt</div>
+      <div className="page-subtitle">Face recognition & attendance verification logs</div>
 
       {/* Filters */}
       <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>

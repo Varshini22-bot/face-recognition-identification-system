@@ -587,7 +587,7 @@ Convenient one-click batch scripts are included for quick demonstration:
 3. **Launch Desktop GUI (PyQt6)**:
    Double-click `run_gui.bat` (opens desktop camera recognition app).
 4. **Launch Web Dashboard (React)**:
-   Double-click `run_dashboard.bat` (opens web dashboard at `http://localhost:5173`).
+   Double-click `run_dashboard.bat` (opens web dashboard at `http://localhost:3000`).
 
 ---
 

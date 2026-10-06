@@ -62,7 +62,7 @@ export default function Dashboard({ onApiStatus }) {
   return (
     <>
       <div className="page-title">Dashboard</div>
-      <div className="page-subtitle">Tự động cập nhật mỗi 5 giây</div>
+      <div className="page-subtitle">Real-time updates every 5 seconds</div>
 
       {loading ? <div className="spinner" /> : (
         <>
@@ -95,7 +95,7 @@ export default function Dashboard({ onApiStatus }) {
           <div className="inference-bar">
             <div>
               <div style={{ fontWeight: 600, marginBottom: 2 }}>Inference Engine</div>
-              <p>Khi bật, mỗi khung hình camera sẽ được nhận dạng khuôn mặt.</p>
+              <p>When active, incoming video frames are processed for real-time face recognition.</p>
             </div>
             <span className={`inference-status ${inference ? 'on' : 'off'}`}>
               {inference ? '● Running' : '○ Stopped'}

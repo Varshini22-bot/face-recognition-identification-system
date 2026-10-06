@@ -67,7 +67,7 @@ export default function Settings() {
   return (
     <>
       <div className="page-title">Settings</div>
-      <div className="page-subtitle">Quản lý danh tính và cấu hình hệ thống</div>
+      <div className="page-subtitle">Manage enrolled identities and system configuration</div>
 
       {/* Enroll form */}
       <div className="form-card">
@@ -78,7 +78,7 @@ export default function Settings() {
             <label className="field-label">Person Name</label>
             <input
               type="text"
-              placeholder="e.g. Nguyen Van A"
+              placeholder="e.g. Varshini"
               value={enrollName}
               onChange={e => setEnrollName(e.target.value)}
               required
