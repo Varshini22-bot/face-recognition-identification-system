@@ -1,0 +1,254 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #0f0f23;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+/* ── Layout ── */
+.layout { display: flex; min-height: 100vh; }
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 220px;
+  background: #1a1a3e;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  padding: 0 20px 24px;
+  border-bottom: 1px solid #2a2a5a;
+}
+
+.sidebar-logo h2 { font-size: 1rem; color: #90caf9; }
+.sidebar-logo p  { font-size: 0.75rem; color: #888; margin-top: 2px; }
+
+.sidebar-nav { padding: 16px 0; flex: 1; }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.15s;
+  border-left: 3px solid transparent;
+}
+
+.nav-item:hover   { background: #252550; }
+.nav-item.active  { background: #253060; border-left-color: #42a5f5; color: #90caf9; }
+
+.nav-icon { font-size: 1.1rem; width: 20px; text-align: center; }
+
+.sidebar-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #2a2a5a;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+.dot.green { background: #4caf50; }
+.dot.red   { background: #f44336; }
+
+/* ── Main ── */
+.main { flex: 1; padding: 24px; overflow-y: auto; }
+
+.page-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.page-subtitle { font-size: 0.85rem; color: #888; margin-bottom: 24px; }
+
+/* ── Cards ── */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-bottom: 28px; }
+
+.card {
+  background: #1a1a3e;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.card-label { font-size: 0.78rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; }
+.card-value { font-size: 2rem; font-weight: 700; margin: 6px 0 2px; }
+.card-sub   { font-size: 0.75rem; color: #aaa; }
+
+.card-value.green  { color: #66bb6a; }
+.card-value.yellow { color: #ffa726; }
+.card-value.red    { color: #ef5350; }
+.card-value.blue   { color: #42a5f5; }
+
+/* ── Inference toggle ── */
+.inference-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1a1a3e;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+}
+.inference-bar p   { flex: 1; font-size: 0.85rem; color: #aaa; }
+.inference-status  { font-weight: 600; font-size: 0.9rem; }
+.inference-status.on  { color: #66bb6a; }
+.inference-status.off { color: #ef5350; }
+
+/* ── Buttons ── */
+.btn {
+  padding: 9px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: opacity 0.15s;
+}
+.btn:hover { opacity: 0.85; }
+.btn.primary { background: #1565c0; color: #fff; }
+.btn.danger  { background: #c62828; color: #fff; }
+.btn.success { background: #2e7d32; color: #fff; }
+
+/* ── Table ── */
+.section-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; color: #ccc; }
+
+.table-wrap { background: #1a1a3e; border-radius: 10px; overflow: hidden; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+thead th {
+  background: #111130;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+tbody tr { border-bottom: 1px solid #22224a; }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: #1f1f45; }
+td { padding: 10px 16px; }
+
+.thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #111;
+}
+.thumb-placeholder {
+  width: 40px; height: 40px;
+  border-radius: 6px;
+  background: #252550;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge.known   { background: #1b5e20; color: #a5d6a7; }
+.badge.unknown { background: #b71c1c; color: #ef9a9a; }
+
+.sim-bar-wrap { display: flex; align-items: center; gap: 8px; }
+.sim-bar {
+  flex: 1; max-width: 100px;
+  height: 6px;
+  border-radius: 3px;
+  background: #252550;
+  overflow: hidden;
+}
+.sim-bar-fill { height: 100%; border-radius: 3px; background: #42a5f5; transition: width 0.3s; }
+
+/* ── Enroll form ── */
+.form-card {
+  background: #1a1a3e;
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 480px;
+  margin-bottom: 24px;
+}
+.form-card h3 { margin-bottom: 16px; font-size: 1rem; }
+.form-row { margin-bottom: 14px; }
+label.field-label { display: block; font-size: 0.8rem; color: #aaa; margin-bottom: 6px; }
+input[type=text], input[type=file] {
+  width: 100%;
+  padding: 9px 12px;
+  background: #111130;
+  border: 1px solid #2a2a5a;
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 0.88rem;
+}
+input[type=text]:focus { outline: none; border-color: #42a5f5; }
+
+/* ── Identities ── */
+.id-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.id-card {
+  background: #1a1a3e;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.id-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: #253060;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+.id-name  { font-size: 0.88rem; font-weight: 600; }
+.id-count { font-size: 0.75rem; color: #888; }
+
+.btn.icon-btn {
+  background: none;
+  color: #ef5350;
+  padding: 4px 8px;
+  font-size: 1rem;
+}
+.btn.icon-btn:hover { background: #2a1010; }
+
+/* ── Spinner ── */
+.spinner {
+  width: 32px; height: 32px;
+  border: 3px solid #2a2a5a;
+  border-top-color: #42a5f5;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 40px auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Empty ── */
+.empty { text-align: center; padding: 48px 0; color: #555; }
+.empty-icon { font-size: 2.5rem; margin-bottom: 8px; }
+
+/* ── Alerts ── */
+.alert {
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+.alert.success { background: #1b5e20; color: #a5d6a7; }
+.alert.error   { background: #b71c1c; color: #ef9a9a; }
